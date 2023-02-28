@@ -20,15 +20,15 @@ int _atoi(char *s)
 			flag = 1;
 			if (sign > 0)
 			{
-				if (INT_MAX / 10 < (int) n)
+			if (INT_MAX / 10 < (int) n)
 					return (INT_MAX);
 				n *= 10;
-				if (INT_MAX - (*s - '0') < (int) n)
+			if (INT_MAX - (*s - '0') < (int) n)
 					return (INT_MAX);
 			}
 			else
 			{
-				if (INT_MIN / 10 < (int) -n)
+			if (INT_MIN / 10 < (int) -n)
 					return (INT_MIN);
 				n *= 10;
 				if (INT_MIN + (*s - '0') > (int) -n)
