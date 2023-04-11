@@ -106,7 +106,7 @@ size_t elf_class(const unsigned char *buffer)
  *
  * Return: 1 if big endian, otherwise 0
  */
-
+int elf_data(const unsigned char *buffer)
 {
 	printf("  %-34s ", "Data:");
 
@@ -128,7 +128,7 @@ size_t elf_class(const unsigned char *buffer)
  * elf_version - print ELF version
  * @buffer: the ELF header
  */
-
+void elf_version(const unsigned char *buffer)
 {
 	printf("  %-34s %u", "Version:", buffer[EI_VERSION]);
 
@@ -142,7 +142,7 @@ size_t elf_class(const unsigned char *buffer)
  * elf_osabi - print ELF OS/ABI
  * @buffer: the ELF header
  */
-
+void elf_osabi(const unsigned char *buffer)
 {
 	const char *os_table[19] = {
 		"UNIX - System V",
@@ -178,7 +178,7 @@ size_t elf_class(const unsigned char *buffer)
  * elf_abivers - print ELF ABI version
  * @buffer: the ELF header
  */
-
+void elf_abivers(const unsigned char *buffer)
 {
 	printf("  %-34s %u\n", "ABI Version:", buffer[EI_ABIVERSION]);
 }
@@ -188,7 +188,7 @@ size_t elf_class(const unsigned char *buffer)
  * @buffer: the ELF header
  * @big_endian: endianness (big endian if non-zero)
  */
-
+void elf_type(const unsigned char *buffer, int big_endian)
 {
 	char *type_table[5] = {
 		"NONE (No file type)",
